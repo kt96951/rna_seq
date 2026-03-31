@@ -2,7 +2,7 @@
 #SBATCH --job-name=fastQC                                   # Job name 
 #SBATCH --partition=batch                                   # Partition name (batch, highmem, or gpu)
 #SBATCH --ntasks=1                                          # 1 task (process) for below commands
-#SBATCH --cpus-per-task=1                                   # CPU core count per task, by default 1
+#SBATCH --cpus-per-task=4                                   # CPU core count per task, by default 1
 #SBATCH --mem=50G                                           # Memory per node (8GB); by default using M as unit
 #SBATCH --time=24:00:00                                     # Time limit hrs:mins:secs or days-hrs:mins:secs
 #SBATCH --export=NONE                                   
@@ -25,14 +25,9 @@ fi
 module load FastQC/0.12.1-Java-11
 
 #3. Run FastQC
-time {
-			for File in *fastq.gz; do 
-		
-			fastqc | -t 4 | -o qc_reports | "$FILE"
+
+
+fastqc -t 4 -o qc_reports /home/kt96951/rna_seq/cornsnake_fastq/*.fastq.gz
+	
 			
-			
-			done 
-			}
-			
-echo -e "\n** Script ended on 'date' **"
-echo "Done!" 
+
