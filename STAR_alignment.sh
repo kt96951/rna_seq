@@ -25,7 +25,7 @@ fi
 
 FASTQ_DIR="/home/kt96951/rna_seq/cornsnake_fastq"
 INDEX_DIR="/scratch/kt96951/workdir/rna_seq/genome_index"
-
+OUT_DIR="/scratch/kt96951/workdir/rna_seq/genome_index/star_results"
 #load modules 
 
 module load STAR/2.7.11b-GCC-13.3.0
