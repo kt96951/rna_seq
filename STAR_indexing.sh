@@ -37,6 +37,5 @@ STAR --runThreadN 12 \
      --genomeFastaFiles $GENOME_FASTA \
      --sjdbGTFfile $GENOME_GTF \
      --sjdbOverhang 50 \
-     --quantMode GeneCounts \
      
 
