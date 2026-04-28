@@ -82,10 +82,10 @@ dev.off()
 pCutoff = 0.05
 FCcutoff = 1.0
 rownames(res) <- gsub("gene-", "", rownames(res))
-p = EnhancedVolcano(data.frame(res), lab = rownames(res), x = 'log2FoldChange', y = 'padj',ylim = c(0, 15),
+p = EnhancedVolcano(data.frame(res), lab = rownames(res), x = 'log2FoldChange', y = 'padj',ylim = c(0, 8),
                     xlab = bquote(~Log[2]~ 'fold change'), ylab = bquote(~-Log[10]~adjusted~italic(P)),
                     pCutoff = pCutoff, FCcutoff = FCcutoff, pointSize = 0, labSize = 4.0,col = c('grey30', 'forestgreen', 'royalblue', 'red2'),colAlpha = 1.0 ,shape = 19,
-                    title = "Volcano plot", subtitle = "SSA/P vs. Normal",
+                    title = "Volcano plot", subtitle = "OCA2 mutant vs. Wild Type",
                     caption = paste0('log2 FC cutoff: ', FCcutoff, '; p-value cutoff: ', pCutoff, '\nTotal = ', nrow(res), ' variables'),
                     drawConnectors = TRUE,
                     widthConnectors = 0.5,
